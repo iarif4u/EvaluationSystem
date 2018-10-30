@@ -1,0 +1,150 @@
+/*-- OverRight css--*/
+.skin-blue .main-header .navbar {
+    background-color: #00466f;
+}
+.skin-blue .main-header .logo {
+    background-color: #00466f;
+}
+/*-- DataTabe Custom Style --*/
+
+.dc-table-style a.btn-view, a.btn-edit, a.btn-detect{
+    font-size: 20px;
+    padding-right: 10px;
+}
+.dc-table-style a.btn-view{
+	color: #357CA5;
+}
+.dc-table-style a.btn-view:hover{
+	color: #3c8dbc;
+}
+.dc-table-style a.btn-edit{
+	color: #008D4C;
+}
+.dc-table-style a.btn-edit:hover{
+	color: #00a65a;
+}
+.dc-table-style a.btn-detect{
+	color:#D33724;
+}
+.dc-table-style a.btn-detect:hover{
+	color:#f56954;
+}
+
+
+/*-- Modal Custom Style --*/
+
+.example-modal .modal {
+	position: relative;
+	top: auto;
+	bottom: auto;
+	right: auto;
+	left: auto;
+	display: block;
+	z-index: 1;
+}
+
+
+.example-modal .modal {
+	background: transparent !important;
+}
+
+.modal-footerr{
+    text-align: center !important;
+}
+/*-- challan --*/
+.challan-button button {
+    font-size: 20px;
+    font-weight: 900;
+    background: #ddd;
+    border: none;
+    border-radius: 10px;
+    padding: 1px 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.challan-header-top {
+    background: #f9f9f9;
+    padding: 10px 0px;
+}
+.challan-eminfo table.table {
+    margin-bottom: 0;
+}
+.challan-logo {
+    
+}
+.challan-logo img {
+    margin: 0 auto;
+    width: 100%;
+}
+.challan-title h1 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 900;
+    text-align: left;
+    /* margin: 10px 0; */
+    line-height: 1;
+}
+.challan-title h3 {
+    margin: auto;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+.challan-eminfo {
+    font-size: 10px;
+}
+.challan-eminfo table tr{
+    border:none;
+}
+.challan-eminfo table tr th {
+    border: none;
+    padding: 2px;
+}
+.challan-eminfo table tr td {
+    border: none;
+    padding: 2px;
+	
+}
+.challan-subtitle {
+    background: #ddd;
+    text-align: center;
+    text-transform: uppercase;
+	    margin-bottom: 30px;
+}
+.challan-subtitle h6 {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+    font-weight: 500;
+}
+.challan-subtitle h5 {
+    font-size: 16px;
+    line-height: 25px;
+    color: #333;
+    font-weight: 900;
+    margin: auto;
+}
+.challan-signture-area {
+    margin-top: 30px;
+}
+
+.cchallan-footer table tr{
+    border:none;
+}
+.challan-footer table tr th {
+    border: none;
+    padding: 2px;
+    font-size: 10px;
+}
+.challan-footer table tr td {
+    border: none;
+    padding: 2px;
+	
+}
+.challan-footer {
+    background: #f7f7f7;
+    font-size: 12px;
+    margin: 10px 0;
+}
+.challan-footer table{margin-bottom:0}
