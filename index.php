@@ -12,13 +12,10 @@ if(isset($_SESSION['id'])&&isset($_SESSION['USER'])){
 						</div>';
         $username = $_POST['username'];
         $password = $_POST['password'];
+
         if($username==NULL || $password==NULL){
             $error_login = $error;
         }else{
-            $password    = sha1($password);
-            $matchcols   = array("admin_name", "password");
-            $matchvalues = array($username, $password);
-
             $info = matchForLogin($conn,$username,$password);
             if($info){
                 $_SESSION['id'] = $info['id'];
@@ -74,7 +71,9 @@ if(isset($_SESSION['id'])&&isset($_SESSION['USER'])){
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
-
+        <?php if (isset($error_login)): ?>
+        <?php echo $error_login; ?>
+        <?php endif; ?>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name="username" placeholder="Email">

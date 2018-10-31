@@ -50,9 +50,14 @@ require_once  ('config.php');
 
 function matchForLogin($conn,$user, $password)
 {
-    $sql = "SELECT * FROM admins WHERE username = '$user' AND password = '$password'";
+  //  $password = password_hash($password, PASSWORD_DEFAULT);
 
+    $sql = "SELECT * FROM admins WHERE username = '$user'";
     $query = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($query);
-    return $row;
+    $user_password = $row['password'];
+    if(password_verify($password, $user_password)) {
+        return $row;
+    }
+    return false;
 }

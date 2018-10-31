@@ -23,7 +23,7 @@ if (mysqli_connect_errno())
             <small>Course Information List </small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="home.php"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Course List </li>
         </ol>
     </section>
@@ -273,8 +273,8 @@ if (mysqli_connect_errno())
                 $stored = [];
                 while($data = fgetcsv($handler)){
                     if (in_array($data[0], $stored)) { continue;}
-                    $sql  = ("INSERT INTO `student_reg` (std_id, std_name, std_session, std_department, hall, admission_year, std_present_address, std_permanent_address, std_con_no, std_email, remark) 
-                        VALUES('$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]', '$data[5]', '$data[6]', '$data[7]', '$data[8]', '$data[9]', '$data[10]')");
+                    $sql  = ("INSERT INTO `course_info` (course_id, course_name, department, category, total_marks, credit, remark) 
+                        VALUES('$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]', '$data[5]', '$data[6]')");
 
                     $query = mysqli_query($conn, $sql) or mysqli_error($conn);
                     $stored[] = $data[0];
@@ -485,38 +485,40 @@ if (mysqli_connect_errno())
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Add Course Register - CSV File </h4>
             </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <form action="">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype ="multipart/form-data">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+
                             <div class="form-group">
-                                <label>Uplode CSV File For Category Name </label>
-                                <input type="file" id="exampleInputFile">
-                                <p class="help-block">Browsers your Course List .CSV File </p>
+                                <label>Uplode CSV File </label>
+                                <input type = "file" name ="file" class ="form-control"/>
+                                <p class="help-block">Browsers your Student List .CSV File </p>
                             </div>
                             <!-- /.form-group -->
-                        </form>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-6">
-                        <form action="">
+
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+
                             <div class="form-group">
                                 <label>.CSV File Formate Downlode Here</label>
-                                <a class="btn btn-success"> <i class="fa fa-cloud-download" aria-hidden="true"></i> Download CSV File </a>
+                                <a href="csv/course_list.csv" class="btn btn-success"> <i class="fa fa-cloud-download" aria-hidden="true"></i> Download CSV File </a>
                                 <p class="help-block">CSV File Formate </p>
                             </div>
                             <!-- /.form-group -->
-                        </form>
-                    </div>
-                    <!-- /.col -->
 
+                        </div>
+                        <!-- /.col -->
+
+                    </div>
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type = "submit" name = "savecsv" id= "Submit"  class="btn btn-primary" onClick="showit();"><span class = "glyphicon glyphicon-upload"></span> UPLOAD</button>
+                </div>
+            </form>
         </div>
         <!-- /.modal-content -->
     </div>

@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$dbuser = "admin";
-$password = "passarif";
+$dbuser = "root";
+$password = "";
 $database = "eval";
 $conn=mysqli_connect($host,$dbuser,$password,$database);
 // Check connection
